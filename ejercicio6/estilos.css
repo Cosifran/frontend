@@ -1,0 +1,18 @@
+
+.button:hover{
+    background-color: green;
+    color: white;
+}
+.text-pseudo::before{
+    content: "Pasa por encima!";
+}
+.text-pseudo:hover::before{
+    content: "¡Hecho!";
+    display: block;
+}
+
+
+
+
+
+
