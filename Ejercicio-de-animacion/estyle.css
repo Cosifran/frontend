@@ -1,0 +1,11 @@
+
+.btn-modern{
+    transition:  all 0.4s ease-in-out !important;
+}
+
+body:hover .btn-modern{
+    transform: translateY(-5px);
+    background-color: yellow;
+    color: white;
+    box-shadow: 50px black;
+    }
