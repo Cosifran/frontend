@@ -1,0 +1,229 @@
+@use "componets";
+@mixin section-display{
+    width: 100%;
+    max-width: 992px;
+    margin: auto;
+    padding: 3rem;
+}
+
+html{
+    min-width: 100vw;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+.nav{
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 4rem;
+    border-bottom: solid 1px #ddd;
+}
+
+.logo img{
+    max-width: 7rem;
+}
+
+.sec-home{
+    display: flex;
+    @include section-display();
+    align-items: center;
+
+    .home-cta{
+        flex: 1;
+        
+        .cta-text{
+            color: componets.$color-main;
+        }
+
+        .home-title{
+            font-size: 3rem;
+            width: 20rem;
+        }
+
+        .home-description{
+            width: 300px;
+        }
+
+        .lead-magnet{
+            .imput-text{
+                max-width: 200px;
+            }
+        }
+    }
+}
+
+.sec-feature{
+    @include section-display();
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .intro{
+        text-align: center;
+
+        h3{
+            font-size: 1.8rem;
+        }
+    
+        p{
+            font: 0.8rem;
+            color: #888;
+        }
+    }
+
+    .features{
+        display: flex;
+        gap: 1rem;
+        padding: 2rem 0;
+        align-items: center;
+            .text{
+                flex: 1;
+            .feacture{
+                display: flex;
+                flex-direction: row;
+                align-items: baseline;
+                .description{
+                    .title-description{
+                        margin-left: 1rem;
+                        font-size: 1.10rem;
+                    }
+    
+                    .text-description{
+                        font-size: 1rem;
+                        margin-left: 1rem;
+                        max-width: 20rem;
+                    }
+                }
+            }
+            }
+        
+
+        .image{
+            img{
+                max-width: 20rem;
+            }
+        }
+    }
+}
+
+.sec-benefits{
+    border-top: 1px solid #ddd;
+    .intro{
+        @extend .sec-feature, .intro;
+    }
+
+}
+
+.benefit-card{
+    padding: 0 2rem 2rem 2rem;
+    width: 100%;
+}
+
+.sec-kpis{
+    width: 100%;
+    background-color: componets.$color-main;
+    color: white;
+    padding: 4rem;
+    
+    .kapi{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        .number{
+            font-size: 4rem;
+            font-weight: 600;
+        }
+
+        .desc{
+            font-size: 0.9rem;
+            color: #ffffffaa;
+        }
+    }
+}
+
+.sec-onboarding{
+    .intro{
+        @extend .sec-feature, .intro;
+    }
+
+    .steps{
+        padding: 0 7rem 5rem 7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .step-separator{
+            flex: 1;
+            border-top: 2px solid #ddd;
+            margin: 0 1rem;
+
+        }
+    }
+}
+
+.sec-flooter-cta{
+    background-color: componets.$coor-flooter;
+    padding: 5rem;
+    background-image: url(/assets/img/bg.png);
+    background-repeat: no-repeat;
+    background-position: 100%;
+
+    .flooter-cta{
+        width: 31%;
+        .cta-title{
+            font-size: 2rem;
+        }
+
+        .cta-description{
+            font-size: 1.1rem
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .sec-onboarding{
+        .steps{
+            flex-direction: column;
+
+            .icon-desc{
+                .title{
+                    text-align: center;
+                }
+            }
+        }
+
+    }
+
+    .sec-flooter-cta{
+        background-image: none;
+        .flooter-cta{
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .sec-benefits{
+        .intro{
+            text-align: center;
+            h3{
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .sec-feature{
+        .intro{
+            p{
+                font-size: 1rem;
+            }
+
+            h3{
+                font-size: 2rem;
+            }
+        }
+    }
+}
